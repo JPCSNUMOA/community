@@ -31,7 +31,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex'}, mr: 1 }}>
-            <img className='appbar-logo' src='../JPCS-LOGO.png'/>
+            <img className='appbar-logo' src='JPCS-LOGO.png'/>
           </Box>
           <Typography
             variant="h6"
@@ -86,7 +86,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-            <img className='appbar-logo' src='../JPCS-LOGO.png'/>
+            <img className='appbar-logo' src='JPCS-LOGO.png'/>
           </Box>
           <Typography
             variant="h5"

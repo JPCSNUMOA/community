@@ -1,6 +1,11 @@
 import React, {useRef} from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import { motion, useScroll, useTransform } from "framer-motion";
+import "../BANNER.svg"
+import "../HERO-SHOT-PHOTO.png"
+import "../HERO-SHOT-TEXT.svg"
+import "../HOW-IT-STARTED.svg"
+import "../../JPCS-LOGO.png"
 
 
 const chapterStyle = {
@@ -37,10 +42,10 @@ function HomePage() {
       <Container className='gradient flex-center' maxWidth sx={{ width: '100%', height: '100%', zIndex: "10", bgcolor: "background.default", overflow: "hidden"}}>
       
                <div className='wave-contain'>
-                  <motion.img className='waves' src='src\assets\WAVES.svg'  style={{x: waveX, y: "-10%"}}/>
+                  <motion.img className='waves' src='src\WAVES.svg'  style={{x: waveX, y: "-10%"}}/>
                </div>
                <motion.div className='flex-center' style={{y: textY}}>
-                <img className='hero-shot-text' src='src\assets\HERO-SHOT-TEXT.svg'></img>
+                <img className='hero-shot-text' src='src\HERO-SHOT-TEXT.svg'></img>
                 </motion.div>
              
               <motion.div className='flex-center' style={{y: subtextY}}>
@@ -54,7 +59,7 @@ function HomePage() {
               </motion.div>
               
               <motion.div className='flex-center hero-photo-div' style={{y: backgroundY}}>
-                <img className='hero-shot-photo' src='src\assets\HERO-SHOT-PHOTO.png'></img>
+                <img className='hero-shot-photo' src='src\HERO-SHOT-PHOTO.png'></img>
               </motion.div>
             
       </Container>
@@ -66,14 +71,14 @@ function HomePage() {
       </div>
 
       <Box className= "flex-center">
-        <img className='banner' src='src\assets\BANNER.svg'></img>
+        <img className='banner' src='src\BANNER.svg'></img>
       </Box>
 
       <div  className= "div-block ">
               <p className='jpcs-desc'>{JPCS_DESC2}</p>
       </div>
       <motion.div className= "flex-center" style={{y:howY}}>
-        <img style={{width: "90svw"}} src='src\assets\HOW-IT-STARTED.svg'/>
+        <img style={{width: "90svw"}} src='src\HOW-IT-STARTED.svg'/>
       </motion.div>
       <Container maxWidth sx={{bgcolor: "primary.main", height: "500px"}}>
         
