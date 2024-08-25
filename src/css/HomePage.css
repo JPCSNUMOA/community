@@ -40,6 +40,7 @@ body{
     height: 100%;
     overflow: visible;
     margin-top: 50px;
+    opacity: 0.5;
 }
 
 .wave-contain{
@@ -84,11 +85,100 @@ body{
     margin-top: 2em;
 }
 
+.slogan{
+
+    z-index: 10;
+    
+}
+
+.slogan-contain{
+    align-items: center;
+    background-image: url("src/SLOGANBG.svg");
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+    
+}
+
+.slogan-desc{
+    width: clamp(200px, 35%, 900px);
+    text-align: justify;
+    font-size: clamp(8px, 2.5vw, 25px);
+    z-index: 1;
+    color: #ffffff;
+    
+}
+
+.logo-text-contain{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+}
+
+.logo-text{
+    width: clamp(200px, 30svw, 800px );
+}
+
+.logo-desc{
+    width: clamp(200px, 60svw, 1000px );
+}
+
+.logo-contain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    padding-top: 100px;
+    width: 100%;
+
+    overflow: hidden;
+}
+
 @media (max-width:880px) {
     .wave-contain{
         margin-top: -90px;
         transition: margin-top 2s;
     }
 
+    
 }
+
+@media (max-width:1200px) {
+
+    .slogan-desc{
+        width: clamp(200px, 80%, 900px);
+        text-align: justify;
+        font-size: clamp(8px, 2.5vw, 25px);
+        z-index: 1;
+        color: #ffffff;
+        
+    }
+
+    .slogan{
+        width: 100%;
+    }
+
+    .logo-contain{
+        padding-top: 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+
+    }
+
+    .logo-desc{
+        width: 100%;
+    }
+
+    .logo-text{
+        width: 50%;
+
+    }
+
+}
+
+
+
 

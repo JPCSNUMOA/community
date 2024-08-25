@@ -9,17 +9,49 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import jLogo from "../../JPCS-LOGO.png"
+import { motion, useScroll, useTransform } from "framer-motion";
 
 
-const pages = [ 'Home','About Us', 'Events', 'Officers'];
+const pages = [ 
+  {
+    name: "Home",
+    id: "home",
+    href: "/Home"
+  },
+  {
+    name: "About Us",
+    id: "about",
+    href: "/About"
+  },
+  {
+    name: "Events",
+    id: "events",
+    href: "/Home"
+  },
+  {
+    name: "Officers",
+    id: "officers",
+    href: "/officers"
+  }
+];
+
+
 
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
+  
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
+
+  const goToScroll = (id) => {
+    document.getElementById(id).scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -31,7 +63,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex'}, mr: 1 }}>
-            <img className='appbar-logo' src='JPCS-LOGO.png'/>
+            <img className='appbar-logo' src={jLogo}/>
           </Box>
           <Typography
             variant="h6"
@@ -79,14 +111,14 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{fontWeight: "bold"}} textAlign="center">{page}</Typography>
+                <MenuItem key={page.name} onClick={() => { handleCloseNavMenu(); goToScroll(page.id)}}>
+                  <Typography sx={{fontWeight: "bold"}} textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-            <img className='appbar-logo' src='JPCS-LOGO.png'/>
+            <img className='appbar-logo' src={jLogo}/>
           </Box>
           <Typography
             variant="h5"
@@ -107,13 +139,17 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'}, justifyContent: "flex-end", gap: "20px"}}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontSize:"small", fontWeight: "bold" }}
+              <motion.div
+                  whileHover={{ scale: [null, 1.3, 1.2]}}>
+                  <Button
+                  key={page.name}
+                  onClick={() => { handleCloseNavMenu(); goToScroll(page.id)}}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize:"1rem", fontWeight: "bold" }}
               >
-                {page}
+                {page.name}
               </Button>
+              </motion.div>
+              
             ))}
           </Box>
 
