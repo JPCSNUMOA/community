@@ -1,6 +1,4 @@
-body{
 
-}
 
 .flex-row{
     display: flex;
@@ -239,10 +237,13 @@ body{
     text-decoration: underline;
     letter-spacing: 0.5pt;
     margin-left: 0.5em;
+    font-size: clamp(12px, 1.4vw, 16px);
+    align-self: center;
     
 }
 
 .footer-contain{
+    padding: 0, 1dvw, 0, 1dvw;
     margin-top: auto;
     background-image: url("../SLOGANBG.svg");
     background-color: #1a2056;
@@ -293,8 +294,16 @@ body{
 
     .footer-wrapper{
         padding-top: 0px;
+        gap: 0px;
     }
-    
+
+    .footer-title{
+        width: 87%;
+    }
+
+    .footer-desc{
+        width: 87%;
+    }
 }
 
 @media (max-width:1200px) {

@@ -64,6 +64,7 @@ function ResponsiveAppBar() {
     else{
 
       window.location.replace(href)
+      window.scrollTo(0,0)
     }
 
     console.log(OnCurrent)
@@ -75,7 +76,7 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar position="fixed" sx={{bgcolor: "primary"}}>
+    <AppBar position="fixed" sx={{bgcolor: "primary.main"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex'}, mr: 1 }}>

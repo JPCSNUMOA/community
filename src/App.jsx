@@ -2,7 +2,7 @@ import { useState } from 'react'
 import HomePage from './pages/HomePage'
 import SearchAppBar from './components/ResponsiveAppBar'
 import { BrowserRouter, createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
-import { Container } from '@mui/material'
+import { Container, Hidden } from '@mui/material'
 import EventsPage from './pages/EventsPage'
 
 const router = createHashRouter([
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
         <SearchAppBar/>
-        <div style={{marginTop: "20px", minHeight: "100dvh"}}>
+        <div style={{marginTop: "20px"}}>
            <RouterProvider router={router}/>
         </div>
        
