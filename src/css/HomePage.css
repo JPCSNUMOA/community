@@ -87,13 +87,14 @@ body{
 
 .slogan{
 
+    width: 50%;
     z-index: 10;
     
 }
 
 .slogan-contain{
     align-items: center;
-    background-image: url("src/SLOGANBG.svg");
+    background-image: url("../SLOGANBG.svg");
     background-size: 100%;
     background-position-x: center;
     background-position-y: bottom;
@@ -137,12 +138,62 @@ body{
     overflow: hidden;
 }
 
+
+
+.code-image{
+    width: clamp(200px, 40%, 900px);
+    margin-left: 40px;
+    
+}
+
+
+.code-future-contain{
+    padding-top: 2%;
+    background-image: url("../CODE-FUTURE-BG.svg");
+    background-size: 125%, 125%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-origin: center;
+    aspect-ratio: 5/3;
+}
+
+.perks{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.perk-list{
+    font-size: clamp(14px, 2vw, 25px);
+    color: #1a2056;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.perk-sub{
+    width: 45%;
+
+}
+.down{
+    color: #1a2056;
+    font-size: clamp(8px, 1.5vw, 20px);
+    padding-left: 10px;
+}
+
 @media (max-width:880px) {
     .wave-contain{
         margin-top: -90px;
         transition: margin-top 2s;
     }
 
+    .perk-sub{
+        width: 100%;
+    }
+
+    .down{
+        display: none;
+    }
     
 }
 
@@ -158,7 +209,7 @@ body{
     }
 
     .slogan{
-        width: 100%;
+        width: 90%;
     }
 
     .logo-contain{
@@ -176,6 +227,7 @@ body{
         width: 50%;
 
     }
+
 
 }
 

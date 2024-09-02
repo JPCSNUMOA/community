@@ -12,6 +12,7 @@ import AboutUs from '../components/AboutUs';
 
 
 
+
 const chapterStyle = {
   display: "block",
   width: "clamp(100px, 25vw, 200px)",
@@ -83,13 +84,13 @@ function HomePage() {
                 <p className='jpcs-desc'>{JPCS_DESC2}</p>
         </div>
 
-        <motion.div  className= "flex-center margin-change" style={{y:howY, zIndex: "-2"}}>
+        <motion.div  className= "flex-center margin-change" style={{y:howY, zIndex: "-10"}}>
           <img style={{width: "90svw"}} src={hiStarted}/>
         </motion.div>
 
 
-        <Container  className='slogan-contain' maxWidth sx={{bgcolor: "primary.main", height: "auto", mt: {xs: "0px", md: "0px"}, display: "flex", flexDirection: {xs: "column", md: "column", lg: "row", }, py: "50px"}}>
-            <motion.img className='slogan' src={slogan} whileHover={{ scale: [null, 1.3, 1.2] }} onClick={{ scale: [null, 1.3, 1.2] }}
+        <Container className='slogan-contain'  maxWidth sx={{ bgcolor: "primary.main", height: "auto", mt: {xs: "0px", md: "0px"}, display: "flex", flexDirection: {xs: "column", md: "column", lg: "row", }, py: "50px", zIndex:"10"}}>
+            <motion.img className='slogan' src={slogan} whileHover={{ scale: [null, 1.3, 1.2] }} whileTap={{ scale: [null, 1.3, 1.2] }}
             transition={{ duration: 0.3 }}/>
             <p className='slogan-desc'>
               {SLOGAN_DESC}
@@ -98,7 +99,7 @@ function HomePage() {
       </div>
     
       <AboutUs/> 
-      <Container sx={{height: "700px"}}></Container>
+    
    </>
     
   )

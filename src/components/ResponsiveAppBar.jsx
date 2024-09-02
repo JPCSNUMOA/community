@@ -9,7 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import jLogo from "../../JPCS-LOGO.png"
+import jLogo from "../../JPCS-LOGO.png";
+import { redirect } from 'react-router-dom';
+import { useState } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 
 
@@ -17,29 +19,38 @@ const pages = [
   {
     name: "Home",
     id: "home",
-    href: "/Home"
+    href: "",
+    location: "/JPCS-WEBSITE/"
   },
   {
     name: "About Us",
     id: "about",
-    href: "/About"
+    href: "",
+    location: "/JPCS-WEBSITE/"
   },
   {
     name: "Events",
     id: "events",
-    href: "/Home"
+    href: "#/events",
+    location: "/JPCS-WEBSITE/#/events"
+    
   },
   {
     name: "Officers",
     id: "officers",
-    href: "/officers"
+    href: "/JPCS-WEBSITE/",
+    location: "/JPCS-WEBSITE/#/officers"
   }
 ];
-
-
+ 
 
 
 function ResponsiveAppBar() {
+
+
+ 
+  const [OnCurrent, setOnCurrent] = useState(true)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   
@@ -49,8 +60,18 @@ function ResponsiveAppBar() {
   };
 
 
-  const goToScroll = (id) => {
-    document.getElementById(id).scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  const goToScroll = (id, href) => {
+    console.log(window.location.hash)
+    if(window.location.hash==href){
+      setOnCurrent(true)
+       document.getElementById(id).scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    }
+    else{
+
+      window.location.replace(href)
+    }
+
+    console.log(OnCurrent)
   }
 
   const handleCloseNavMenu = () => {
@@ -111,7 +132,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={() => { handleCloseNavMenu(); goToScroll(page.id)}}>
+                <MenuItem key={page.name} onClick={() => { handleCloseNavMenu(); goToScroll(page.id, page.href)}}  >
                   <Typography sx={{fontWeight: "bold"}} textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
@@ -143,7 +164,8 @@ function ResponsiveAppBar() {
                   whileHover={{ scale: [null, 1.3, 1.2]}}>
                   <Button
                   key={page.name}
-                  onClick={() => { handleCloseNavMenu(); goToScroll(page.id)}}
+                  onClick={() => { handleCloseNavMenu(); goToScroll(page.id, page.href)}}
+
                   sx={{ my: 2, color: 'white', display: 'block', fontSize:"1rem", fontWeight: "bold" }}
               >
                 {page.name}
