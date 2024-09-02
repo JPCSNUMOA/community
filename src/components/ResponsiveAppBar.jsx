@@ -35,12 +35,7 @@ const pages = [
     location: "/JPCS-WEBSITE/#/events"
     
   },
-  {
-    name: "Officers",
-    id: "officers",
-    href: "/JPCS-WEBSITE/",
-    location: "/JPCS-WEBSITE/#/officers"
-  }
+  
 ];
  
 

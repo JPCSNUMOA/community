@@ -1,5 +1,10 @@
 body{
-    color: #1a2056;
+
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
 }
 
 .appbar-logo{
@@ -181,6 +186,97 @@ body{
     padding-left: 10px;
 }
 
+.footer-wrapper{
+    display: flex;
+    gap: 4em;
+    padding-left: 1dvw;
+    padding-right: 1dvw;
+    padding-top: 40px;
+    
+}
+
+.footer-sub{
+    flex: 6;
+    
+
+}
+
+.footer-title{
+
+    color: white;
+    font-weight: bold;
+    font-size: clamp(12px, 4vw, 20px);
+
+}
+
+.footer-sub-mid{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.footer-sub-mid p{
+    color: white;
+    font-size: clamp(12px, 4.5vw, 26px);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+
+.footer-desc{
+    color: white;
+    text-align: justify;
+    font-size: clamp(12px, 1.4vw, 16px);
+    line-height: 1.1rem;
+    margin: 0;
+}
+
+.email-link{
+    color: white;
+    text-decoration: underline;
+    letter-spacing: 0.5pt;
+    margin-left: 0.5em;
+    
+}
+
+.footer-contain{
+    margin-top: auto;
+    background-image: url("../SLOGANBG.svg");
+    background-color: #1a2056;
+    background-blend-mode: lighten;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+.event-contain{
+    background-image: radial-gradient(circle at 2% 16%, #0066ff2e 0%, transparent 20.05%),radial-gradient(circle at 83% 45%, #0066ff24 0%, transparent 13.05%);
+    min-height: 100vh;
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.event-hero-contain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.event-hero-text{
+    width: clamp(300pt, 35%, 1000px);
+
+}
+
 @media (max-width:880px) {
     .wave-contain{
         margin-top: -90px;
@@ -193,6 +289,10 @@ body{
 
     .down{
         display: none;
+    }
+
+    .footer-wrapper{
+        padding-top: 0px;
     }
     
 }

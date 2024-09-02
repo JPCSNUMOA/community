@@ -28,7 +28,7 @@ function App() {
   return (
     <>
         <SearchAppBar/>
-        <div style={{marginTop: "20px"}}>
+        <div style={{marginTop: "20px", minHeight: "100dvh"}}>
            <RouterProvider router={router}/>
         </div>
        

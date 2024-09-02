@@ -8,6 +8,7 @@ import hiStarted from "../HOW-IT-STARTED.svg"
 import wave from "../WAVES.svg"
 import slogan from "../SLOGAN.svg"
 import AboutUs from '../components/AboutUs';
+import ResponsiveFooter from '../components/ResponsiveFooter';
 
 
 
@@ -97,9 +98,8 @@ function HomePage() {
             </p>
         </Container>
       </div>
-    
       <AboutUs/> 
-    
+      <ResponsiveFooter/>
    </>
     
   )
